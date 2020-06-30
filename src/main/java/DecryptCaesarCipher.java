@@ -62,6 +62,6 @@ public class DecryptCaesarCipher {
                 System.out.println("Invalid Key");
             }
 
-        return null;
+        return decryptedPhrase;
     }
 }

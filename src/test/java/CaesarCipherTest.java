@@ -19,4 +19,5 @@ public class CaesarCipherTest {
         CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
         assertEquals("test", testCaesarCipher.getPhrase());
     }
+
 }

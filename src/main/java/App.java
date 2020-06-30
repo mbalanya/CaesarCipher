@@ -13,7 +13,7 @@ public class App {
         if (entryInput.equals("e")){
             System.out.println("Welcome to Encryption. Enter sentence to be Encrypted: ");
             String encryptSentence = myConsole.readLine();
-            System.out.println("Welcome to Encryption. Enter key to be used for Encryption: ");
+            System.out.println("Enter key to be used for Encryption: ");
             String encryptKeyString = myConsole.readLine();
             int encryptKey = Integer.parseInt(encryptKeyString);
             encryptSentence = encryptSentence.toLowerCase();
@@ -31,19 +31,25 @@ public class App {
             System.out.println("Your encrypted code is: " + joinedString.toUpperCase());
         } else if (entryInput.equals("d")){
             System.out.println("Welcome to Decryption. Enter sentence to be Decrypted: ");
-            String encryptSentence = myConsole.readLine();
-            encryptSentence = encryptSentence.toLowerCase();
-            String[] words = encryptSentence.split("\\s+");
+            String decryptSentence = myConsole.readLine();
+            System.out.println("Enter key you used for Encryption: ");
+            String decryptKeyString = myConsole.readLine();
+            int decryptKey = Integer.parseInt(decryptKeyString);
+            decryptSentence = decryptSentence.toLowerCase();
+            String[] words = decryptSentence.split("\\s+");
             for (int i = 0; i < words.length; i++){
-                words[i] = words[i].replaceAll("^\\w", "");
+                words[i] = words[i].replaceAll("^\\s", "");
             }
+            ArrayList<String> decryptResultArray = new ArrayList<String>();
+            for (String dataToBeDecrypted : words){
+                DecryptCaesarCipher decryptedData = new DecryptCaesarCipher(decryptKey, dataToBeDecrypted);
+                String encryptResult = decryptedData.decryption(decryptKey, dataToBeDecrypted);
+                decryptResultArray.add(encryptResult);
+            }
+            String joinedString = String.join(" ", decryptResultArray);
+            System.out.println("Your decrypted code is: " + joinedString.toUpperCase());
         } else {
             System.out.println("Invalid Input!");
         }
-
-
-
-        System.out.println("Your decrypted code is: ");
-
     }
 }

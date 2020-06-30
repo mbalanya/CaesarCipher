@@ -24,12 +24,12 @@ public class DecryptCaesarCipher {
         for(Integer i = 0; i < alphabetList.length; i++)
             if (key < alphabetList.length && key > 0){
                 decryptedPhrase = "";
-                char encryptedArr[] = new char[phrase.length()];
+                char decryptedArr[] = new char[phrase.length()];
                 char[] phraseCharArray = phrase.toCharArray();
                 for(char phraseChar : phraseCharArray){
                     int positionAlphabetListString = alphabetListString.indexOf(phraseChar);
-                    int decryptedPosition = key - positionAlphabetListString;
-                    decryptedPosition = decryptedPosition %alphabetList.length;
+                    int decryptedPosition = positionAlphabetListString - key;
+                   
                     char decryptedPhraseChar = alphabetList[decryptedPosition];
                     String decryptedPhraseStr = Character.toString(decryptedPhraseChar);
                     decryptedPhrase += decryptedPhraseStr;
@@ -42,8 +42,9 @@ public class DecryptCaesarCipher {
                 char[] phraseCharArray = phrase.toCharArray();
                 for(char phraseChar : phraseCharArray) {
                     int positionAlphabetListString = alphabetListString.indexOf(phraseChar);
-                    int decryptedPosition = key - positionAlphabetListString;
-                    decryptedPosition = decryptedPosition %alphabetList.length;
+                    int decryptedPosition =  positionAlphabetListString - key;
+
+
                     char decryptedPhraseChar = alphabetList[decryptedPosition];
                     String decryptedPhraseStr = Character.toString(decryptedPhraseChar);
                     decryptedPhrase += decryptedPhraseStr;
@@ -52,6 +53,6 @@ public class DecryptCaesarCipher {
                 System.out.println("Invalid Key");
             }
 
-        return decryptedPhrase;
+        return null;
     }
 }

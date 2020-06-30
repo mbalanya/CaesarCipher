@@ -13,4 +13,10 @@ public class CaesarCipherTest {
         CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
         assertEquals(2, testCaesarCipher.getKey());
     }
+
+    @Test
+    public void newCaesarCipher_getsPhrase_test() {
+        CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
+        assertEquals("test", testCaesarCipher.getPhrase());
+    }
 }

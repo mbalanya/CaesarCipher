@@ -29,6 +29,7 @@ public class CaesarCipher {
                 for(char phraseChar : phraseCharArray){
                     int positionAlphabetListString = alphabetListString.indexOf(phraseChar);
                     int encryptedPosition = key + positionAlphabetListString;
+                    encryptedPosition = encryptedPosition %alphabetList.length;
                     char encryptedPhraseChar = alphabetList[encryptedPosition];
                     String encryptedPhraseStr = Character.toString(encryptedPhraseChar);
                     encryptedPhrase += encryptedPhraseStr;
@@ -42,6 +43,7 @@ public class CaesarCipher {
                 for(char phraseChar : phraseCharArray) {
                     int positionAlphabetListString = alphabetListString.indexOf(phraseChar);
                     int encryptedPosition = key + positionAlphabetListString;
+                    encryptedPosition = encryptedPosition %alphabetList.length;
                     char encryptedPhraseChar = alphabetList[encryptedPosition];
                     String encryptedPhraseStr = Character.toString(encryptedPhraseChar);
                     encryptedPhrase += encryptedPhraseStr;

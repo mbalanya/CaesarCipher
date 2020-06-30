@@ -26,6 +26,10 @@ public class CaesarCipherTest {
         assertEquals("ghijk", testCaesarCipher.encryption(5, "bcdef"));
     }
 
-
+    @Test
+    public void newCaesarCipher_encryption_d() {
+        CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
+        assertEquals("fsso", testCaesarCipher.encryption(30, "book"));
+    }
 
 }

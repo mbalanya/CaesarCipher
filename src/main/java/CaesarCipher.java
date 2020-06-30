@@ -12,6 +12,6 @@ public class CaesarCipher {
     }
 
     public String getPhrase() {
-        return null;
+        return this.phrase;
     }
 }

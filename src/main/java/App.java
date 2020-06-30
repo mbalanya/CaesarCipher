@@ -19,16 +19,16 @@ public class App {
             encryptSentence = encryptSentence.toLowerCase();
             String[] words = encryptSentence.split("\\s+");
             for (int i = 0; i < words.length; i++){
-                words[i] = words[i].replaceAll("^\\w", "");
+                words[i] = words[i].replaceAll("^\\s", "");
             }
             ArrayList<String> encryptResultArray = new ArrayList<String>();
             for (String dataToBeDecrypted : words){
                 CaesarCipher encryptedData = new CaesarCipher(encryptKey, dataToBeDecrypted);
-                String encryptResult = encryptedData.encryption(encryptKey,dataToBeDecrypted);
+                String encryptResult = encryptedData.encryption(encryptKey, dataToBeDecrypted);
                 encryptResultArray.add(encryptResult);
             }
             String joinedString = String.join(" ", encryptResultArray);
-            System.out.println("Your encrypted code is: " + joinedString);
+            System.out.println("Your encrypted code is: " + joinedString.toUpperCase());
         } else if (entryInput.equals("d")){
             System.out.println("Welcome to Decryption. Enter sentence to be Decrypted: ");
             String encryptSentence = myConsole.readLine();

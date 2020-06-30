@@ -29,7 +29,12 @@ public class DecryptCaesarCipher {
                 for(char phraseChar : phraseCharArray){
                     int positionAlphabetListString = alphabetListString.indexOf(phraseChar);
                     int decryptedPosition = positionAlphabetListString - key;
-                   
+                    if (decryptedPosition < 0){
+                        decryptedPosition = alphabetList.length - Math.abs(decryptedPosition % alphabetList.length);
+                    } else {
+                        decryptedPosition = decryptedPosition %alphabetList.length;
+                    }
+
                     char decryptedPhraseChar = alphabetList[decryptedPosition];
                     String decryptedPhraseStr = Character.toString(decryptedPhraseChar);
                     decryptedPhrase += decryptedPhraseStr;
@@ -43,7 +48,11 @@ public class DecryptCaesarCipher {
                 for(char phraseChar : phraseCharArray) {
                     int positionAlphabetListString = alphabetListString.indexOf(phraseChar);
                     int decryptedPosition =  positionAlphabetListString - key;
-
+                    if (decryptedPosition < 0){
+                        decryptedPosition = alphabetList.length - Math.abs(decryptedPosition % alphabetList.length);
+                    } else {
+                        decryptedPosition = decryptedPosition % alphabetList.length;
+                    }
 
                     char decryptedPhraseChar = alphabetList[decryptedPosition];
                     String decryptedPhraseStr = Character.toString(decryptedPhraseChar);

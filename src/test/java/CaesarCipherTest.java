@@ -26,6 +26,6 @@ public class CaesarCipherTest {
         assertEquals("ghijk", testCaesarCipher.encryption(5, "bcdef"));
     }
 
-    
+
 
 }

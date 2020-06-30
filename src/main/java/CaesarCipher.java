@@ -50,6 +50,6 @@ public class CaesarCipher {
                 System.out.println("Invalid Key");
             }
 
-        return null;
+        return encryptedPhrase;
     }
 }

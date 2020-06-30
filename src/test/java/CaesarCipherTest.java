@@ -7,4 +7,10 @@ public class CaesarCipherTest {
         CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
         assertEquals(true, testCaesarCipher instanceof CaesarCipher);
     }
+
+    @Test
+    public void newCaesarCipher_getsKey_2() {
+        CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
+        assertEquals(2, testCaesarCipher.getKey());
+    }
 }

@@ -23,7 +23,7 @@ public class CaesarCipherTest {
     @Test
     public void newCaesarCipher_encryption_g() {
         CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
-        assertEquals("b", testCaesarCipher.encryption(20, "h"));
+        assertEquals("bc", testCaesarCipher.encryption(20, "hi"));
     }
 
     @Test

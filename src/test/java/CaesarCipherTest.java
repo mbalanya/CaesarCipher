@@ -20,4 +20,12 @@ public class CaesarCipherTest {
         assertEquals("test", testCaesarCipher.getPhrase());
     }
 
+    @Test
+    public void newCaesarCipher_encryption_g() {
+        CaesarCipher testCaesarCipher = new CaesarCipher(2, "test");
+        assertEquals("ghijk", testCaesarCipher.encryption(5, "bcdef"));
+    }
+
+    
+
 }
